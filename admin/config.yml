@@ -1,0 +1,73 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: 'fr'
+
+collections:
+  - name: "parametres"
+    label: "Paramètres du site"
+    files:
+      - name: "general"
+        label: "Informations générales"
+        file: "_data/general.json"
+        fields:
+          - { label: "Nom du club", name: "nom_club", widget: "string", default: "La Boule du Parc La Fontaine" }
+          - { label: "Adresse", name: "adresse", widget: "string", default: "3819 Calixa-Lavallée, Montréal" }
+          - { label: "Lien Facebook", name: "facebook", widget: "string" }
+          - { label: "Lien Instagram", name: "instagram", widget: "string" }
+          - { label: "Lien WhatsApp", name: "whatsapp", widget: "string" }
+
+  - name: "tournois"
+    label: "Tournois"
+    folder: "_data/tournois"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom du tournoi", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: "DD MMMM YYYY" }
+      - { label: "Heure de présence", name: "heure", widget: "string", default: "8h30" }
+      - { label: "Format", name: "format", widget: "string" }
+      - { label: "Supplément non-membre", name: "supplement", widget: "boolean", default: false }
+      - { label: "Affiche", name: "affiche", widget: "image", required: false }
+      - { label: "Lien inscription", name: "lien_inscription", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text", required: false }
+
+  - name: "partenaires"
+    label: "Partenaires"
+    folder: "_data/partenaires"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Nom", name: "title", widget: "string" }
+      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Site web", name: "url", widget: "string", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+
+  - name: "ligue"
+    label: "Ligue d'été"
+    files:
+      - name: "info"
+        label: "Informations ligue"
+        file: "_data/ligue.json"
+        fields:
+          - { label: "Titre", name: "titre", widget: "string", default: "Ligue d'été 2026" }
+          - { label: "Description", name: "description", widget: "text" }
+          - { label: "Bourse totale", name: "bourse", widget: "string" }
+          - { label: "Lien inscription Messenger", name: "messenger", widget: "string" }
+
+  - name: "international"
+    label: "International de Montréal"
+    files:
+      - name: "edition2026"
+        label: "2ème édition 2026"
+        file: "_data/international.json"
+        fields:
+          - { label: "Date", name: "date", widget: "string", default: "25 et 26 juillet 2026" }
+          - { label: "Format", name: "format", widget: "string", default: "Triplette" }
+          - { label: "Prix", name: "prix", widget: "string", default: "180$ par équipe" }
+          - { label: "Lien inscription", name: "lien_inscription", widget: "string" }
+          - { label: "Affiche", name: "affiche", widget: "image" }
