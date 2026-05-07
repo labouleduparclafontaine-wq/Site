@@ -1146,10 +1146,11 @@ window.onload = function() {
   z-index: 200000;
   display: flex; align-items: center; justify-content: center;
   opacity: 0; visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.4s ease, visibility 0.4s ease;
   padding: 1.5rem;
 }
-#popup-tournoi-overlay.popup-visible { opacity: 1; visibility: visible; }
+#popup-tournoi-overlay.popup-visible { opacity: 1; visibility: visible; pointer-events: auto; }
 
 #popup-tournoi-card {
   position: relative;
