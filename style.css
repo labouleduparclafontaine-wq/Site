@@ -1537,34 +1537,24 @@ nav {
 
   .hero-video-bg {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .hero-video-bg video {
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     min-width: 100%;
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .hero-video-bg::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 300%; height: 300%;
-    z-index: 1;
-    cursor: default;
-  }
-  .hero-video-bg iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* Portrait video: scale up width to cover landscape */
-    width: 56.25vh;
-    height: 100vh;
-    min-width: 100%;
-    min-height: 177.78vw;
-    transform: translate(-50%, -50%) scale(1.5);
+    transform: translate(-50%, -50%);
+    object-fit: cover;
     pointer-events: none;
   }
   .hero-overlay {
@@ -1624,8 +1614,8 @@ nav {
     .stat-number { font-size: 2rem; }
 
     /* VIDEO BG */
-    .hero-video-bg iframe {
-      transform: translate(-50%, -50%) scale(2.5) !important;
+    .hero-video-bg video {
+      transform: translate(-50%, -50%) scale(1);
     }
 
     /* WHY SECTION */
