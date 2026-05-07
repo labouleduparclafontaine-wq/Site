@@ -49,63 +49,16 @@
 
 <section class="hero">
   <!-- VIDEO BACKGROUND -->
-  <div class="hero-video-bg" style="position:relative;">
-    <div id="yt-player-container" style="position:absolute;inset:0;overflow:hidden;">
-      <div id="yt-player" style="position:absolute;top:50%;left:50%;min-width:100%;min-height:100%;width:auto;height:auto;transform:translate(-50%,-50%);"></div>
-    </div>
-    <!-- Couverture anti-contrôles : bloque tous les clics et interactions sur la vidéo -->
-    <div style="position:absolute;inset:0;z-index:2;cursor:default;"></div>
+  <div class="hero-video-bg">
+    <iframe
+      src="https://www.youtube.com/embed/HT4MIeFxyKo?autoplay=1&mute=1&loop=1&playlist=HT4MIeFxyKo&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+      title="La Boule du Parc La Fontaine"
+      frameborder="0"
+      allow="autoplay; loop"
+      allowfullscreen>
+    </iframe>
+    <div style="position:absolute;inset:0;z-index:2;"></div>
   </div>
-  <script>
-  // Charger l'API YouTube
-  var tag = document.createElement('script');
-  tag.src = 'https://www.youtube.com/iframe_api';
-  var firstScript = document.getElementsByTagName('script')[0];
-  firstScript.parentNode.insertBefore(tag, firstScript);
-
-  var ytPlayer;
-  function onYouTubeIframeAPIReady() {
-    ytPlayer = new YT.Player('yt-player', {
-      videoId: 'HT4MIeFxyKo',
-      playerVars: {
-        autoplay: 1,
-        mute: 1,
-        loop: 1,
-        playlist: 'HT4MIeFxyKo',
-        controls: 0,
-        showinfo: 0,
-        rel: 0,
-        modestbranding: 1,
-        playsinline: 1,
-        disablekb: 1,
-        fs: 0,
-        iv_load_policy: 3,
-        cc_load_policy: 0,
-        origin: window.location.origin
-      },
-      events: {
-        onReady: function(e) {
-          e.target.mute();
-          e.target.playVideo();
-          // Empêcher le Picture-in-Picture
-          var iframe = e.target.getIframe();
-          iframe.setAttribute('allow', 'autoplay; loop');
-          iframe.style.pointerEvents = 'none';
-        },
-        onStateChange: function(e) {
-          // Relancer si la vidéo s'arrête
-          if (e.data === YT.PlayerState.ENDED) {
-            e.target.playVideo();
-          }
-          // Relancer si mise en pause (par un contrôle système)
-          if (e.data === YT.PlayerState.PAUSED) {
-            e.target.playVideo();
-          }
-        }
-      }
-    });
-  }
-  </script>
   <div class="hero-overlay"></div>
   <div class="hero-dots"></div>
   <div class="hero-left">
