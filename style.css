@@ -1547,6 +1547,14 @@ nav {
     z-index: 0;
     pointer-events: none;
   }
+  .hero-video-bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 300%; height: 300%;
+    z-index: 1;
+    cursor: default;
+  }
   .hero-video-bg iframe {
     position: absolute;
     top: 50%;
