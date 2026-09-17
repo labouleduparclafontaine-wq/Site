@@ -15,6 +15,24 @@
 <link rel="stylesheet" href="style.css">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+/* Section International — mise en page responsive */
+.intl-wrap{max-width:1100px;margin:0 auto;padding:3rem;}
+.intl-panel{background:var(--marine);border-radius:16px;padding:2rem 2.5rem;}
+.intl-grid{display:grid;grid-template-columns:120px 1fr;gap:2rem;align-items:start;}
+.intl-statrow{display:flex;gap:2rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap;}
+.intl-video{display:block;width:320px;flex-shrink:0;margin-left:auto;border-radius:10px;overflow:hidden;position:relative;text-decoration:none;}
+.intl-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.5rem;}
+@media (max-width:720px){
+  .intl-wrap{padding:1.25rem;}
+  .intl-panel{padding:1.5rem 1.25rem;}
+  .intl-grid{grid-template-columns:1fr;gap:1.25rem;}
+  .intl-grid > img{max-width:170px;}
+  .intl-statrow{gap:1.25rem;justify-content:center;}
+  .intl-video{width:100%;margin-left:0;}
+  .intl-results{grid-template-columns:1fr;}
+}
+</style>
 </head>
 <body>
 <nav>
@@ -612,16 +630,16 @@
   </div>
 </div>
 
-<div style="max-width:1100px;margin:0 auto;padding:3rem;">
+<div class="intl-wrap">
 
   <!-- 2EME EDITION RECAP -->
-  <div style="background:var(--marine);border-radius:16px;padding:2rem 2.5rem;margin-bottom:2rem;">
+  <div class="intl-panel" style="margin-bottom:2rem;">
     <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--blanc);margin-bottom:1.25rem;letter-spacing:0.03em;">Retour sur la 2ème édition — 2026</div>
-    <div style="display:grid;grid-template-columns:120px 1fr;gap:2rem;align-items:start;">
+    <div class="intl-grid">
       <img src="images/image_15.jpg" alt="2ème International 2026" style="width:100%;border-radius:8px;display:block;">
       <div>
         <!-- Stats + Vidéo -->
-        <div style="display:flex;gap:2rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap;">
+        <div class="intl-statrow">
           <div style="text-align:center;">
             <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--blanc);line-height:1;">48</div>
             <div style="font-size:0.65rem;color:var(--gris-bleu);text-transform:uppercase;letter-spacing:0.08em;">Équipes</div>
@@ -634,8 +652,7 @@
             <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--blanc);line-height:1;">8640$</div>
             <div style="font-size:0.65rem;color:var(--gris-bleu);text-transform:uppercase;letter-spacing:0.08em;">Bourses</div>
           </div>
-          <a href="https://www.youtube.com/watch?v=GMfLXjCRL8I" target="_blank"
-             style="display:block;margin-left:auto;border-radius:10px;overflow:hidden;width:320px;flex-shrink:0;position:relative;text-decoration:none;">
+          <a href="https://www.youtube.com/watch?v=GMfLXjCRL8I" target="_blank" class="intl-video">
             <img src="https://img.youtube.com/vi/GMfLXjCRL8I/mqdefault.jpg"
                  style="width:100%;display:block;border-radius:10px;">
             <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);border-radius:10px;transition:background 0.2s;"
@@ -651,7 +668,7 @@
           48 équipes au rendez-vous pour cette 2ème édition. Totalité des inscriptions remise en bourses — 8 640$ redistribués.
         </p>
         <!-- Résultats -->
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0.5rem;">
+        <div class="intl-results">
 
           <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:0.85rem;">
             <div style="font-size:0.68rem;font-weight:700;color:var(--bleu-accent);margin-bottom:0.5rem;">TOURNOI A</div>
@@ -689,12 +706,12 @@
   </div>
 
   <!-- 1ERE EDITION COMPACT -->
-  <div style="background:var(--marine);border-radius:16px;padding:2rem 2.5rem;">
+  <div class="intl-panel">
     <div style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:var(--blanc);margin-bottom:1.25rem;letter-spacing:0.03em;">Retour sur la 1ère édition — 2025</div>
-    <div style="display:grid;grid-template-columns:120px 1fr;gap:2rem;align-items:start;">
+    <div class="intl-grid">
       <img src="images/image_16.png" alt="1er International 2025" style="width:100%;border-radius:8px;display:block;">
       <div>
-        <div style="display:flex;gap:2rem;align-items:center;margin-bottom:1rem;flex-wrap:wrap;">
+        <div class="intl-statrow">
           <div style="text-align:center;">
             <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--blanc);line-height:1;">58</div>
             <div style="font-size:0.65rem;color:var(--gris-bleu);text-transform:uppercase;letter-spacing:0.08em;">Équipes</div>
@@ -707,8 +724,7 @@
             <div style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--blanc);line-height:1;">5800$</div>
             <div style="font-size:0.65rem;color:var(--gris-bleu);text-transform:uppercase;letter-spacing:0.08em;">Bourses</div>
           </div>
-          <a href="https://www.youtube.com/watch?v=HT4MIeFxyKo" target="_blank"
-             style="display:block;margin-left:auto;border-radius:10px;overflow:hidden;width:320px;flex-shrink:0;position:relative;text-decoration:none;">
+          <a href="https://www.youtube.com/watch?v=HT4MIeFxyKo" target="_blank" class="intl-video">
             <img src="https://img.youtube.com/vi/HT4MIeFxyKo/mqdefault.jpg" 
                  style="width:100%;display:block;border-radius:10px;">
             <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);border-radius:10px;transition:background 0.2s;"
@@ -723,7 +739,7 @@
         <p style="font-size:0.82rem;color:var(--gris-bleu);line-height:1.6;margin-bottom:1rem;">
           58 équipes venues de Québec, Longueuil, Dallas, Los Angeles, Las Vegas, Paris, Ottawa, Toronto et plus. Totalité des inscriptions remise en bourses — 5 800$ redistribués.
         </p>
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;">
+        <div class="intl-results">
           <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:0.75rem;">
             <div style="font-size:0.68rem;font-weight:700;color:var(--bleu-accent);margin-bottom:0.4rem;">TOURNOI A</div>
             <div style="font-size:0.72rem;color:rgba(255,255,255,0.75);line-height:1.7;">🥇 Hammouchane — Laulhé<br>🥈 Meyet — Rakotoninosy</div>
@@ -1091,7 +1107,8 @@
 </div>
 
 <script>
-function showPage(id) {
+// Affiche réellement la section (sans toucher à l'URL)
+function renderPage(id) {
   var sections = document.getElementsByClassName('page-section');
   for (var i = 0; i < sections.length; i++) { sections[i].style.display = 'none'; }
   var tabs = document.getElementsByClassName('nav-tab');
@@ -1106,6 +1123,22 @@ function showPage(id) {
   var tab = document.getElementById('tab-' + id);
   if (tab) { tab.classList.add('active'); }
 }
+// Déduit l'onglet à afficher à partir de l'URL (#...)
+function idFromHash() {
+  var h = (location.hash || '').replace(/^#/, '');
+  return (h && document.getElementById('page-' + h)) ? h : 'index';
+}
+// Change d'onglet en mettant à jour l'URL (l'accueil garde une URL propre)
+function showPage(id) {
+  var newHash = (id === 'index') ? '' : ('#' + id);
+  if ((location.hash || '') === newHash) {
+    renderPage(id); // pas de changement d'URL → on affiche directement
+  } else {
+    location.hash = newHash; // déclenche 'hashchange' → renderPage
+  }
+}
+// Bouton précédent / suivant du navigateur + lien partagé
+window.addEventListener('hashchange', function() { renderPage(idFromHash()); });
 window.onload = function() {
   var tabs = document.getElementsByClassName('nav-tab');
   for (var i = 0; i < tabs.length; i++) {
@@ -1127,7 +1160,7 @@ window.onload = function() {
       showPage(href.replace('.html', ''));
     }
   });
-  showPage('index');
+  renderPage(idFromHash()); // au chargement : affiche l'onglet indiqué par l'URL
 };
 </script>
 
